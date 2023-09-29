@@ -18,7 +18,7 @@
 
         if($resultCheck > 0) {
             while($row = mysqli_fetch_assoc($result)) {
-                echo '<b>ID:</b> ' .$row['id'] .'<br>';
+                echo '<b>ID:</b> ' . $row['id'] .'<br>';
                 echo '<b>NOME:</b> ' .$row['name'] .'<br>';
                 echo '<b>CPF:</b> ' .$row['cpf'] .'<br>';
                 echo '----------------------<br>';

@@ -21,24 +21,22 @@
                 <span>CPF:</span>
                 <input type="text" name="cpf" id="cpf" oninput="maskCPF(this)">
             </div>
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Enviar" name="send">
         </div>
     </form>
     
     <?php
-        if(isset($_POST['cadastro'])) {
+        if(isset($_POST['send'])) {
             $name = mysqli_real_escape_string($connection, $_POST['name']);
             $cpf = mysqli_real_escape_string($connection, $_POST['cpf']);
 
             $sql = "INSERT INTO user (name, cpf) VALUES ('$name', '$cpf')";
-
             if(mysqli_query($connection, $sql)) {
                 echo 'Success!';
             } else {
                 echo 'Error! Could not able to execute $sql' . mysqli_error($connection);
             }
         }
-
         mysqli_close($connection);
     ?>
 
